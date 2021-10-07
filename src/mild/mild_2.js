@@ -48,7 +48,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   object.removeKey(key);
+   delete object[key];
 }
 
 /**
@@ -68,7 +68,13 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   
+   let newObj = {};
+   for (let property in object) {
+      if (property == key) {
+         continue;
+      } else {newObj[property] = object[property];}
+   }
+   return newObj;
 }
 
 /**
@@ -93,5 +99,8 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-
+   for (let key of keyList) {
+      delete object[key];
+   }
+   return object;
 }

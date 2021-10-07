@@ -1,18 +1,48 @@
 import { sumToString, maxAndMin, getIncreasingArray, countArray } from "./src/mild/mild_1.js";
 
-console.log("Testing sumToString: ")
+import { removeKey, removeKeyNonDestructive, removeKeys } from "./src/mild/mild_2.js"
 
-console.log(sumToString(7,3));
+// console.log("Testing sumToString: ")
+// console.log(sumToString(7,3));
 
-console.log("Testing getIncreasingArray: ");
+// console.log("Testing getIncreasingArray: ");
+// console.log(getIncreasingArray(3,7));
 
-console.log(getIncreasingArray(3,7));
+// console.log("Testing maxAndMin: ");
+// console.log(maxAndMin("23219381923"));
 
-console.log("Testing maxAndMin: ");
+// console.log("Testing countArray: ")
+// console.log(countArray([2,4,3,2,2,0]));
 
-console.log(maxAndMin("23219381923"));
+// console.log("Testing removeKey: ");
+let obj = {
+    name: 'Mr. Boss',
+    title: 'boss',
+    age: 33,
+    password: 'pass123'
+};
+removeKey(obj, 'password');
+console.log(obj);
 
-console.log("Testing countArray: ")
+console.log("Testing removeKeynonDestructive: ");
+obj = {
+    name: 'Mr. Boss',
+    title: 'boss',
+    age: 33,
+    password: 'pass123'
+};
 
-console.log(countArray([2,4,3,2,2,0]));
+ let newObj = removeKeyNonDestructive(obj, 'password');
+ console.log(obj);
+ console.log(newObj);
 
+ console.log("Testing removeKeys: ");
+obj = {
+    name: 'Mr. Boss',
+    title: 'boss',
+    age: 33,
+    password: 'pass123'
+ };
+ obj = removeKeys(obj, ['password', 'age']);
+ console.log(obj);
+ 
