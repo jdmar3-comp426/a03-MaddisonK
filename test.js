@@ -55,8 +55,9 @@ let array = [3,2,5,6,2,7,4,2,7,5];
 // console.log("Testing getSum: ");
 // console.log(getSum(array));
 
-console.log("Testing getMedian: ");
-console.log(getMedian(array)); // 4.5
+// console.log("Testing getMedian: ");
+// console.log(getMedian(array)); // 4.5
+console.log(getStatistics(array));
 
 // console.log("Testing allCarStats: ");
 // console.log(allCarStats);
