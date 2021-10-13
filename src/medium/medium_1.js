@@ -69,6 +69,9 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    return;
+    let max, min;
+    let v = variance(array, getSum(array)/array.length);
+    return {length: array.length, sum: getSum(array), mean: getSum(array)/array.length, median: getMedian(array), min: ({max, min} = maxAndMin(array)).min, min: ({max, min} = maxAndMin(array)).max, 
+    variance: v, standard_deviation: Math.pow(v, .5)};
 }
 
