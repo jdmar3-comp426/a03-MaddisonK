@@ -50,7 +50,7 @@ export function maxAndMin(numbers) {
             max = numbers[i];
         }
     }
-    return {max: int(max), min: int(min)};
+    return {max: parseInt(max), min: parseInt(min)};
 }
 
 /**

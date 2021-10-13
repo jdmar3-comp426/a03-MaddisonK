@@ -1,8 +1,8 @@
-import { sumToString, maxAndMin, getIncreasingArray, countArray } from "./src/mild/mild_1.js";
+// import { sumToString, maxAndMin, getIncreasingArray, countArray } from "./src/mild/mild_1.js";
 
 import { removeKey, removeKeyNonDestructive, removeKeys } from "./src/mild/mild_2.js"
 
-import { getMedian,getSum, getStatistics } from "./src/medium/medium_1.js";
+import { getMedian, getSum, getStatistics } from "./src/medium/medium_1.js";
 
 import {allCarStats} from "./src/medium/medium_2.js"
 
@@ -29,7 +29,7 @@ import {allCarStats} from "./src/medium/medium_2.js"
 // console.log(obj);
 
 // console.log("Testing removeKeynonDestructive: ");
-// obj = {
+// let obj = {
 //     name: 'Mr. Boss',
 //     title: 'boss',
 //     age: 33,
@@ -52,8 +52,8 @@ import {allCarStats} from "./src/medium/medium_2.js"
 
 let array = [3,2,5,6,2,7,4,2,7,5];
 
-console.log("Testing getSum: ");
-console.log(getSum(array));
+// console.log("Testing getSum: ");
+// console.log(getSum(array));
 
 console.log("Testing getMedian: ");
 console.log(getMedian(array)); // 4.5
