@@ -20,16 +20,24 @@ see under the methods section
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
 
-// let avgs = [];
-// for (let car of mpg_data) {
-//     avgs.push(car.highway_mpg, car.city_mpg);
-// }
-// let avgMpg = getStatistics(avgs)[mean];
+let avgs = [];
+let years = [];
+let hybridCount = 0;
+for (let car of mpg_data) {
+    avgs.push(car.highway_mpg, car.city_mpg);
+    years.push(car.year);
+    if (car.hybrid == true) {
+        hybridCount+=1;
+    }
+}
+let avgMpg = getStatistics(avgs)["mean"];
+let allYearStats = getStatistics(years);
+let ratioHybrids = hybridCount/mpg_data.length;
 
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: avgMpg,
+    allYearStats: allYearStats,
+    ratioHybrids: ratioHybrids,
 };
 
 
@@ -90,6 +98,8 @@ export const allCarStats = {
  *
  * }
  */
+
+
 export const moreStats = {
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined
