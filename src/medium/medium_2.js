@@ -99,8 +99,84 @@ export const allCarStats = {
  * }
  */
 
+let makerHybrids = [];
+for (let car of mpg_data) {
+    if (car.hybrid == true) {
+        let make = car.make;
+        if (makerHybrids.length == 0) {
+            makerHybrids.push({make: make, hybrids:[car.id]});
+        } else {
+            let alreadyExists = false;
+            for (let item of makerHybrids) {
+                if (item.make == make) {
+                    for (let carId of item.hybrids) {
+                        if (car.id == carId) {
+                            alreadyExists = true;
+                            break;
+                        }
+                        item.hybrids.push(car.id);
+                        alreadyExists = true;
+                        break;
+                    }
+                }
+            }
+            if (!alreadyExists) {
+                makerHybrids.push({make: make, hybrids:[car.id]});
+            }
+        }
+    }
+}
+
+//sort by hybrid count
+let sorted = [];
+while (makerHybrids.length > 0) {
+    let max = 0;
+    let index = 0;
+    let i = 0;
+    for (let item of makerHybrids) {
+        if (item.hybrids.length > max){
+            max = item.hybrids.length
+            index = i;
+        }
+        i++;
+    }
+    sorted.push(makerHybrids.splice(index, 1)[0]);
+}
+
+//avgMpgByYearAndHybrid
+
+let yearObj = {};
+for (let item of mpg_data) {
+    yearObj[item.year] = {
+        hybrid: {city: [], highway: []},
+        notHybrid: {city: [], highway: []}
+    };
+}
+
+let yearData = [];
+for (let year in yearObj) {
+    let t = [];
+    for (let item of mpg_data) {
+        if (item.year == year) {
+            if (item.hybrid == true) {
+                yearObj[year].hybrid.city.push(item.city_mpg);
+                yearObj[year].hybrid.highway.push(item.highway_mpg);
+            } else {
+                yearObj[year].notHybrid.city.push(item.city_mpg);
+                yearObj[year].notHybrid.highway.push(item.highway_mpg);
+            }  
+        }
+    }
+}
+
+for (let year in yearObj) {
+    yearObj[year].hybrid.city = getStatistics(yearObj[year].hybrid.city).mean; 
+    yearObj[year].hybrid.highway = getStatistics(yearObj[year].hybrid.highway).mean;
+    yearObj[year].notHybrid.city = getStatistics(yearObj[year].notHybrid.city).mean; 
+    yearObj[year].notHybrid.highway = getStatistics(yearObj[year].notHybrid.highway).mean;
+}
 
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+    makerHybrids: sorted,
+    avgMpgByYearAndHybrid: yearObj
 };

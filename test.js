@@ -4,7 +4,7 @@ import { removeKey, removeKeyNonDestructive, removeKeys } from "./src/mild/mild_
 
 import { getMedian, getSum, getStatistics } from "./src/medium/medium_1.js";
 
-import {allCarStats} from "./src/medium/medium_2.js"
+import {allCarStats, moreStats} from "./src/medium/medium_2.js"
 
 // console.log("Testing sumToString: ")
 // console.log(sumToString(7,3));
@@ -60,5 +60,7 @@ let array = [3,2,5,6,2,7,4,2,7,5];
 // console.log(getStatistics(array));
 
 // console.log("Testing allCarStats: ");
-console.log(allCarStats);
+// console.log(allCarStats);
+// console.log(moreStats);
+
  
