@@ -10,6 +10,8 @@ import {searchHighPower, searchName, searchByYear, searchMpg} from "./src/medium
 
 import mpg_data from "./src/medium/data/mpg_data.js";
 
+import { multiplyBy } from "./src/spicy/spicy_9.js";
+
 // console.log("Testing sumToString: ")
 // console.log(sumToString(7,3));
 
@@ -33,42 +35,37 @@ import mpg_data from "./src/medium/data/mpg_data.js";
 // console.log(obj);
 
 // console.log("Testing removeKeynonDestructive: ");
-// let obj = {
-//     name: 'Mr. Boss',
-//     title: 'boss',
-//     age: 33,
-//     password: 'pass123'
-// };
 
 //  let newObj = removeKeyNonDestructive(obj, 'password');
 //  console.log(obj);
 //  console.log(newObj);
 
 //  console.log("Testing removeKeys: ");
-// obj = {
-//     name: 'Mr. Boss',
-//     title: 'boss',
-//     age: 33,
-//     password: 'pass123'
-//  };
 //  obj = removeKeys(obj, ['password', 'age']);
 //  console.log(obj);
 
-let array = [3,2,5,6,2,7,4,2,7,5];
+// let array = [3,2,5,6,2,7,4,2,7,5];
 
 // console.log("Testing getSum: ");
 // console.log(getSum(array));
 
 // console.log("Testing getMedian: ");
 // console.log(getMedian(array)); // 4.5
+
 // console.log(getStatistics(array));
 
 // console.log("Testing allCarStats: ");
 // console.log(allCarStats);
+
 // console.log(moreStats);
 
 // console.log(searchHighPower(mpg_data, 600, 500));
+
 // console.log(searchMpg(mpg_data, 20, 25));
 
 // console.log(searchName(mpg_data, "tang"));
-console.log(searchByYear(mpg_data, [2012,2009,2010]));
+
+// console.log(searchByYear(mpg_data, [2012,2009,2010]));
+
+let mult3 = multiplyBy(3);
+console.log(mult3(3));
