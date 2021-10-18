@@ -27,7 +27,6 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
     
     let carObjsSorted = [];
     while (carObjs.length > 0) {
-        console.log(carObjs.length);
         let max = 0;
         let index = 0;
         let i = 0;
@@ -64,7 +63,6 @@ export function searchMpg(car_data, minCity, minHighway) {
     
     let carObjsSorted = [];
     while (carObjs.length > 0) {
-        console.log(carObjs.length);
         let max = 0;
         let index = 0;
         let i = 0;
@@ -90,7 +88,29 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-    
+    searchTerm = searchTerm.toLowerCase();
+    let carNames = [];
+    for (let car of car_data) {
+        if (car.id.toLowerCase().includes(searchTerm)) {
+            carNames.push(car.id);
+        }
+    }
+    //sort
+    let sortedNames = [];
+    while (carNames.length > 0) {
+        let m = Number.MAX_SAFE_INTEGER;
+        let p = 0;
+        let i = 0;
+        for (let name of carNames) {
+            if (name.toLowerCase().indexOf(searchTerm) < m) {
+                m = name.toLowerCase().indexOf(searchTerm);
+                p = i;
+            }
+            i++;
+        }
+        sortedNames.push(...carNames.splice(p,1));
+    }
+    return sortedNames;
 }
 
 
@@ -103,5 +123,15 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
-
+    let carObjs = [];
+    years = years.sort();
+    console.log(years);
+    for (let year of years) {
+        for (let car of car_data) {
+            if (car.year == year) {
+                carObjs.push(car);
+            }
+        }
+    }
+    return carObjs;
 }
