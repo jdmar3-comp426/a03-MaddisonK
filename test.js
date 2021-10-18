@@ -6,6 +6,10 @@ import { getMedian, getSum, getStatistics } from "./src/medium/medium_1.js";
 
 import {allCarStats, moreStats} from "./src/medium/medium_2.js"
 
+import {searchHighPower} from "./src/medium/medium_3.js"
+
+import mpg_data from "./src/medium/data/mpg_data.js";
+
 // console.log("Testing sumToString: ")
 // console.log(sumToString(7,3));
 
@@ -63,4 +67,6 @@ let array = [3,2,5,6,2,7,4,2,7,5];
 // console.log(allCarStats);
 // console.log(moreStats);
 
- 
+// console.log(searchHighPower(mpg_data, 600, 500));
+let s = "hello";
+console.log(s[0]);
