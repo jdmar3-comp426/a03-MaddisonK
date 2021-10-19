@@ -10,7 +10,7 @@ import {searchHighPower, searchName, searchByYear, searchMpg} from "./src/medium
 
 import mpg_data from "./src/medium/data/mpg_data.js";
 
-import { multiplyBy } from "./src/spicy/spicy_9.js";
+import { multiplyBy, everyEven, someEven, filter } from "./src/spicy/spicy_9.js";
 
 // console.log("Testing sumToString: ")
 // console.log(sumToString(7,3));
@@ -67,5 +67,19 @@ import { multiplyBy } from "./src/spicy/spicy_9.js";
 
 // console.log(searchByYear(mpg_data, [2012,2009,2010]));
 
-let mult3 = multiplyBy(3);
-console.log(mult3(3));
+// let mult3 = multiplyBy(3);
+// console.log(mult3(3));
+
+// console.log(everyEven([1, 5, 1, 0, 1], x => x === 1));
+// console.log(everyEven([1, 1, 0, 1, 1], x => x === 1));
+
+console.log(someEven([4, 3, 2, 1, 0], x => x === 3));
+console.log(someEven([1, 0, 1, 0, 1], x => x === 0));
+console.log(someEven([1, 1, 1, 1, 0], x => x === 0));
+console.log(someEven([0, 0, 0, 0, 0], x => x === 0));
+
+
+console.log(filter(['yes', 'nope', 'maybe', 'yellow'], x => x[0] === 'y'));
+// { pass: ['yes', 'yellow'], fail: ['nope', 'maybe'] }
+console.log(filter([1, 90, 5, 31], x => x % 2 === 1));
+// { pass: [1, 5, 31], fail: [90] }
