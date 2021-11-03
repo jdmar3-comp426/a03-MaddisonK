@@ -54,8 +54,8 @@ import { multiplyBy, everyEven, someEven, filter } from "./src/spicy/spicy_9.js"
 
 // console.log(getStatistics(array));
 
-// console.log("Testing allCarStats: ");
-// console.log(allCarStats);
+console.log("Testing allCarStats: ");
+console.log(allCarStats);
 
 // console.log(moreStats);
 

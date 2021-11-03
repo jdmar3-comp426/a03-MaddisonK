@@ -23,8 +23,8 @@ see under the methods section
 let avgs = [];
 let years = [];
 let hybridCount = 0;
-highway_mpg_list = [];
-city_mpg_list = [];
+let highway_mpg_list = [];
+let city_mpg_list = [];
 for (let car of mpg_data) {
     avgs.push(car.highway_mpg, car.city_mpg);
 
