@@ -92,7 +92,7 @@ export function searchName(car_data, searchTerm) {
     let carNames = [];
     for (let car of car_data) {
         if (car.id.toLowerCase().includes(searchTerm)) {
-            carNames.push(car.id);
+            carNames.push(car);
         }
     }
     //sort
@@ -101,9 +101,9 @@ export function searchName(car_data, searchTerm) {
         let m = Number.MAX_SAFE_INTEGER;
         let p = 0;
         let i = 0;
-        for (let name of carNames) {
-            if (name.toLowerCase().indexOf(searchTerm) < m) {
-                m = name.toLowerCase().indexOf(searchTerm);
+        for (let car of carNames) {
+            if (car.id.toLowerCase().indexOf(searchTerm) < m) {
+                m = car.id.toLowerCase().indexOf(searchTerm);
                 p = i;
             }
             i++;

@@ -23,19 +23,27 @@ see under the methods section
 let avgs = [];
 let years = [];
 let hybridCount = 0;
+highway_mpg_list = [];
+city_mpg_list = [];
 for (let car of mpg_data) {
     avgs.push(car.highway_mpg, car.city_mpg);
+
+    highway_mpg_list.push(car.highway_mpg);
+    city_mpg_list.push(car.city_mpg);
+
     years.push(car.year);
     if (car.hybrid == true) {
         hybridCount+=1;
     }
 }
-let avgMpg = getStatistics(avgs)["mean"];
+let avgCityMpg = getStatistics(city_mpg_list)["mean"];
+let avgHighwayMpg = getStatistics(highway_mpg_list)["mean"];
+
 let allYearStats = getStatistics(years);
 let ratioHybrids = hybridCount/mpg_data.length;
 
 export const allCarStats = {
-    avgMpg: avgMpg,
+    avgMpg: {city: avgCityMpg, highway: avgHighwayMpg},
     allYearStats: allYearStats,
     ratioHybrids: ratioHybrids,
 };
