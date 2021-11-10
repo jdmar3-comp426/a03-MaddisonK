@@ -10,7 +10,7 @@ import {searchHighPower, searchName, searchByYear, searchMpg} from "./src/medium
 
 import mpg_data from "./src/medium/data/mpg_data.js";
 
-import { multiplyBy, everyEven, someEven, filter, repeat} from "./src/spicy/spicy_9.js";
+import { multiplyBy, everyEven, someEven, filter, repeat, repeatDemo} from "./src/spicy/spicy_9.js";
 
 // console.log("Testing sumToString: ")
 // console.log(sumToString(7,3));
@@ -25,24 +25,24 @@ import { multiplyBy, everyEven, someEven, filter, repeat} from "./src/spicy/spic
 // console.log(countArray([2,4,3,2,2,0]));
 
 // console.log("Testing removeKey: ");
-let obj = {
-    name: 'Mr. Boss',
-    title: 'boss',
-    age: 33,
-    password: 'pass123'
-};
+// let obj = {
+//     name: 'Mr. Boss',
+//     title: 'boss',
+//     age: 33,
+//     password: 'pass123'
+// };
 // removeKey(obj, 'password');
 // console.log(obj);
 
-console.log("Testing removeKeynonDestructive: ");
+// console.log("Testing removeKeynonDestructive: ");
 
 //  let newObj = removeKeyNonDestructive(obj, 'password');
 //  console.log(obj);
 //  console.log(newObj);
 
- console.log("Testing removeKeys: ");
- obj = removeKeys(obj, ['password', 'password']);
- console.log(obj);
+//  console.log("Testing removeKeys: ");
+//  obj = removeKeys(obj, ['password', 'password']);
+//  console.log(obj);
 
 // let array = [3,2,5,6,2,7,4,2,7,5];
 
@@ -83,3 +83,5 @@ console.log("Testing removeKeynonDestructive: ");
 // // { pass: ['yes', 'yellow'], fail: ['nope', 'maybe'] }
 // console.log(filter([1, 90, 5, 31], x => x % 2 === 1));
 // // { pass: [1, 5, 31], fail: [90] }
+
+repeatDemo();
