@@ -25,24 +25,24 @@ import { multiplyBy, everyEven, someEven, filter, repeat} from "./src/spicy/spic
 // console.log(countArray([2,4,3,2,2,0]));
 
 // console.log("Testing removeKey: ");
-// let obj = {
-//     name: 'Mr. Boss',
-//     title: 'boss',
-//     age: 33,
-//     password: 'pass123'
-// };
+let obj = {
+    name: 'Mr. Boss',
+    title: 'boss',
+    age: 33,
+    password: 'pass123'
+};
 // removeKey(obj, 'password');
 // console.log(obj);
 
-// console.log("Testing removeKeynonDestructive: ");
+console.log("Testing removeKeynonDestructive: ");
 
 //  let newObj = removeKeyNonDestructive(obj, 'password');
 //  console.log(obj);
 //  console.log(newObj);
 
-//  console.log("Testing removeKeys: ");
-//  obj = removeKeys(obj, ['password', 'age']);
-//  console.log(obj);
+ console.log("Testing removeKeys: ");
+ obj = removeKeys(obj, ['password', 'password']);
+ console.log(obj);
 
 // let array = [3,2,5,6,2,7,4,2,7,5];
 

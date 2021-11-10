@@ -68,26 +68,8 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   let newObj = {};
-   // for (let property in object) {
-   //    if (property == key) {
-   //       continue;
-   //    } else {newObj[property] = object[property];}
-   // }
-   // return newObj;
-
-   let keys = [];
-   for (let property in object) {
-      keys.push(property);
-   }
-
-   keys.splice(keys.indexOf(key));
-
-   for (let k of keys) {
-      newObj[k] = object[k];
-   }
-
-   return newObj;
+   let {[key]: something, ...newObj} = object;
+   return newObj
 }
 
 /**
@@ -112,8 +94,10 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
+
+   let value;
    for (let key of keyList) {
-      delete object[key];
+      ({[key]: value, ...object} = object);
    }
    return object;
 }
